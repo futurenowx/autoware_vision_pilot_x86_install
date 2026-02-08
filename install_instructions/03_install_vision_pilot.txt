@@ -1,3 +1,13 @@
+Vision Pilot is a complete Level 2 Application, which was developed by the Autoware Foundation Team
+
+You can try it on a car based on a single camera.
+
+How to install
+
+The System was tested on a X86 machine/NVIDIA GPU 20260 with Ubuntu 22.04
+You can test all on your own risk!! 
+
+
 1. Go to 
    https://github.com/autowarefoundation/autoware.privately-owned-vehicles/releases/tag/v0.5
 

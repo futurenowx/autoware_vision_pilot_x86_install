@@ -1,10 +1,23 @@
-Base of this application is https://github.com/autowarefoundation/autoware.privately-owned-vehicles/
-(Attention we rename the folder Models/visualization to Models/visualization_org and install ours)
+Fork of https://github.com/autowarefoundation/autoware.privately-owned-vehicles/
 
-Tested on Ubuntu 22.04, on a X86 machine.
-You can test on your own risk!! 
+we update the python files in the folder Models/visualizations 
+
+a. we added a preview to the video_visualization.py files and renamed them to video_visualization_preview.py
+b. we added a file which can used with a camera called camera_visualization_cam.py
+
+when you install the system the org visualizations folder will be renamed to visualizations_old
+we aölso added a base folder in the home directory called autoware_projects, where you will find
+- images
+- videos
+- weights
+- commands
+
+Which you will need to run the system. The video was recorded by us.
+
+The System was tested on a X86 machine/NVIDIA GPU 20260 with Ubuntu 22.04
+You can test all on your own risk!! 
+
 If you have questions open an issue
-
 
 How to install all
 
