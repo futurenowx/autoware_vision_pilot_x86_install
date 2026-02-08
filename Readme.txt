@@ -47,3 +47,13 @@ Step 4. install application
 	sudo ./03_autoware_weights_install.sh
 
 If all runned without error, go to autoware_projects/commands and test the commands
+
+for example:
+
+   cd $HOME
+
+   cd autoware.privately-owned-vehicles/Models/visualizations
+
+   python3 EgoLanes/video_visualization_preview.py   -p ~/autoware_projects/weights/EgoLanes/weights_egolanes.pth   -i ~/autoware_projects/videos/source/highway_stuttgart.mp4   -o ~/autoware_projects/videos/output/EgoLanes --show
+
+
