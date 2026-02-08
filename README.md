@@ -2,26 +2,39 @@ Base of this application is https://github.com/autowarefoundation/autoware.priva
 (Attention we rename the folder Models/visualization to Models/visualization_org and install ours)
 
 
-Tested on Ubuntu 22.04, you can test on your own risk. If you have questions open an issue
+Tested on Ubuntu 22.04, on a X86 machine.
+You can test on your own risk!! 
+If you have questions open an issue
 
-how to install all
 
-    01. Download the neccessary weights
+How to install all
+
+    Step 1. Download the neccessary weights
     
     Open your Browsrer
     Download https://hidrive.ionos.com/lnk/ZCcx1DN7Y
     Copy the file to $HOME/Downloads
     
-    02. Download Autoware_privately_vehicle and install updated files and autoware_projects
-    
+    Step 2. Create a $HOME/autoware_privately_temp Folder
+    cd $HOME
     mkdir $HOME/autoware_privately_temp
-    cd $Home/autoware_privately_temp
-    git clone https://github.com/futurenowx/
+    
+    Step 3. Download Autoware_privately_vehicle 
+    
+    cd $HOME/autoware_privately_temp
+    git clone https://github.com/futurenowx/autoware_privately_x86_install.git
+    
+    4. Make install files executable
 
+    cd $HOME/autoware_privately_temp
     sudo chmod +x 02_autoware_privately_install.sh
     sudo chmod +x 03_autoware_weights_install.sh
+
+    4. install application
+    cd $Home/autoware_privately_temp
     
-    run ./02_autoware_privately_install.sh
-    run ./03_autoware_weights_install.sh
+    pip install -r 01_requirements.txt   (Check the 01_how_to_install_requirements.txt first)
+    sudo ./02_autoware_privately_install.sh
+    sudo ./03_autoware_weights_install.sh
 
 If all runned without error, go to autoware_projects/commands and test the commands
