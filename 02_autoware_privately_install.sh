@@ -74,6 +74,44 @@ else
     exit 1
 fi
 
+
+####################################
+# CREATE WEIGHTS FOLDER STRUCTURE
+####################################
+cd "$USER_HOME/autoware_projects/videos/"
+
+# Create videos output directory and subdirectories
+mkdir -p output/EgoLanes
+mkdir -p output/Scene3D
+mkdir -p output/SceneSeg
+mkdir -p output/DomainSeg
+mkdir -p output/AutoSpeed
+mkdir -p output/AutoSteer
+
+cd "$USER_HOME/autoware_projects/images/"
+
+# Create images output directory and subdirectories
+mkdir -p output/EgoLanes
+mkdir -p output/Scene3D
+mkdir -p output/SceneSeg
+mkdir -p output/DomainSeg
+mkdir -p output/AutoSpeed
+mkdir -p output/AutoSteer
+
+
+echo "✅ Created videos and images output folder structure"
+
+# Fix ownership if running as sudo
+if [ -n "$SUDO_USER" ]; then
+    chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/videos"
+fi
+
+# Fix ownership if running as sudo
+if [ -n "$SUDO_USER" ]; then
+    chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/images"
+fi
+
+
 # copy folder visualizations to autoware.privately-owned-vehicles/Models
 SOURCE="visualizations"
 DEST="$USER_HOME/autoware.privately-owned-vehicles/Models"
@@ -96,39 +134,7 @@ else
     exit 1
 fi
 
-####################################
-# CREATE WEIGHTS FOLDER STRUCTURE
-####################################
-cd "$USER_HOME"
 
-# Create videos output directory and subdirectories
-mkdir -p autoware_projects/videos/output/EgoLanes
-mkdir -p autoware_projects/videos/output/Scene3D
-mkdir -p autoware_projects/videos/output/SceneSeg
-mkdir -p autoware_projects/videos/output/DomainSeg
-mkdir -p autoware_projects/videos/output/AutoSpeed
-mkdir -p autoware_projects/videos/output/AutoSteer
-
-# Create images output directory and subdirectories
-mkdir -p autoware_projects/images/output/EgoLanes
-mkdir -p autoware_projects/images/output/Scene3D
-mkdir -p autoware_projects/images/output/SceneSeg
-mkdir -p autoware_projects/images/output/DomainSeg
-mkdir -p autoware_projects/images/output/AutoSpeed
-mkdir -p autoware_projects/images/output/AutoSteer
-
-
-echo "✅ Created videos and images output folder structure"
-
-# Fix ownership if running as sudo
-if [ -n "$SUDO_USER" ]; then
-    chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/videos"
-fi
-
-# Fix ownership if running as sudo
-if [ -n "$SUDO_USER" ]; then
-    chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/images"
-fi
 
 echo "✅ Step1 install completed successfully, now download the weights and run 03_autoware_weights_install.sh."
 echo "Please check the install.txt!"
