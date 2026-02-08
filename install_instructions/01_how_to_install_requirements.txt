@@ -1,23 +1,31 @@
 how to install the requirements.txt
 
-the 01_requirements.txt are the basefiles you will need to get the applications run
+the 01_requirements.txt are the basefiles you will need to get the applications run.
+a. You will find it in the folder home/autoware_privately_temp. 
+b. See 02_how_to_install_autoware_privatly_vehicle.txt
 
-1. copy the 01_requirements.txt in your Linux Home folder or any folder you want
+1. cd $HOME 
 
-2. cd $Home or cd to your folder
+2. install pip
 
-3. install pip
     - only if you do not have pip 
     - how to check if you have pip
     pip --version or python -m pip --version
     - install if not (ubuntu/debian)
        sudo apt update
-       sudo apt install -y python3-pip 
+       sudo apt install -y python3-pip & sudo apt upgrade -y python3-pip
     - check again with  pip3 --version 
          
- 4. pip install -r 01_requirements.txt
+ 3. cd $HOME/autoware_privately_temp 
+ 
+ 
+ 
+ 4. install 01_requirements
+
+      pip install -r 01_requirements.txt
  
  5. check
+ 
      python - << EOF
 	import torch
 	import cv2
