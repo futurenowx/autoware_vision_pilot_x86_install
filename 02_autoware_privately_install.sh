@@ -74,43 +74,37 @@ else
     exit 1
 fi
 
-
 ####################################
-# CREATE WEIGHTS FOLDER STRUCTURE
+# CREATE OUTPUT FOLDER STRUCTURE
 ####################################
-cd "$USER_HOME/autoware_projects/videos/"
 
 # Create videos output directory and subdirectories
-mkdir -p output/EgoLanes
-mkdir -p output/Scene3D
-mkdir -p output/SceneSeg
-mkdir -p output/DomainSeg
-mkdir -p output/AutoSpeed
-mkdir -p output/AutoSteer
-
-cd "$USER_HOME/autoware_projects/images/"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/EgoLanes"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/Scene3D"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/SceneSeg"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/DomainSeg"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/AutoSpeed"
+mkdir -p "$USER_HOME/autoware_projects/videos/output/AutoSteer"
 
 # Create images output directory and subdirectories
-mkdir -p output/EgoLanes
-mkdir -p output/Scene3D
-mkdir -p output/SceneSeg
-mkdir -p output/DomainSeg
-mkdir -p output/AutoSpeed
-mkdir -p output/AutoSteer
-
+mkdir -p "$USER_HOME/autoware_projects/images/output/EgoLanes"
+mkdir -p "$USER_HOME/autoware_projects/images/output/Scene3D"
+mkdir -p "$USER_HOME/autoware_projects/images/output/SceneSeg"
+mkdir -p "$USER_HOME/autoware_projects/images/output/DomainSeg"
+mkdir -p "$USER_HOME/autoware_projects/images/output/AutoSpeed"
+mkdir -p "$USER_HOME/autoware_projects/images/output/AutoSteer"
 
 echo "✅ Created videos and images output folder structure"
 
 # Fix ownership if running as sudo
 if [ -n "$SUDO_USER" ]; then
     chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/videos"
-fi
-
-# Fix ownership if running as sudo
-if [ -n "$SUDO_USER" ]; then
     chown -R $SUDO_USER:$SUDO_USER "$USER_HOME/autoware_projects/images"
+    echo "✅ Ownership set to $SUDO_USER for videos and images folders"
 fi
 
+# Go back to autoware_privately_x86_install to copy visualizations
+cd "$USER_HOME/autoware_privately_x86_install"
 
 # copy folder visualizations to autoware.privately-owned-vehicles/Models
 SOURCE="visualizations"
@@ -133,8 +127,6 @@ else
     echo "Full path would be: $(pwd)/$SOURCE"
     exit 1
 fi
-
-
 
 echo "✅ Step1 install completed successfully, now download the weights and run 03_autoware_weights_install.sh."
 echo "Please check the install.txt!"
