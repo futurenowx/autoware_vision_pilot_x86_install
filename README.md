@@ -14,27 +14,23 @@ How to install all
     Open your Browsrer
     Download https://hidrive.ionos.com/lnk/ZCcx1DN7Y
     Copy the file to $HOME/Downloads
+
+    Step 2. Download Autoware_privately_vehicle 
     
-    Step 2. Create a $HOME/autoware_privately_temp Folder
-    cd $HOME
-    mkdir $HOME/autoware_privately_temp
-    
-    Step 3. Download Autoware_privately_vehicle 
-    
-    cd $HOME/autoware_privately_temp
     git clone https://github.com/futurenowx/autoware_privately_x86_install.git
     
-    4. Make install files executable
-
-    cd $HOME/autoware_privately_temp
+    3. Make install files executable
+    cd $HOME/autoware_privately_x86_install
     sudo chmod +x 02_autoware_privately_install.sh
     sudo chmod +x 03_autoware_weights_install.sh
 
     4. install application
-    cd $Home/autoware_privately_temp
+    cd $HOME/autoware_privately_x86_install
     
     pip install -r 01_requirements.txt   (Check the 01_how_to_install_requirements.txt first)
     sudo ./02_autoware_privately_install.sh
     sudo ./03_autoware_weights_install.sh
+
+If all runned without error, go to autoware_projects/commands and test the commands
 
 If all runned without error, go to autoware_projects/commands and test the commands
