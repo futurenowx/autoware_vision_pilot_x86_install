@@ -1,10 +1,10 @@
 how to install the requirements.txt
 
-the 01_requirements.txt are the basefiles you will need to get the applications run.
-You will find it in the folder home/autoware_vision_pilot_x86_install. 
+The 01_requirements.txt are the basefiles you will need to get the applications run.
+You will find it in the folder $HOME/autoware_vision_pilot_x86_install. 
 
 
-1. cd $HOME 
+1. cd $HOME
 
 2. install pip
 
